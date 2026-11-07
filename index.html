@@ -78,7 +78,47 @@
       nav.open { display: flex; }
       nav a { padding: 5px 0; }
       h1 { letter-spacing: -1.8px; }
-    }
+    }/* Homepage animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .eyebrow {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero h1 {
+  animation: fadeInUp 1s ease both;
+}
+
+.hero .lead {
+  animation: fadeInUp 1.2s ease both;
+}
+
+.hero .actions {
+  animation: fadeInUp 1.4s ease both;
+}
+
+.avatar-card {
+  animation: fadeInUp 1.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .eyebrow,
+  .hero h1,
+  .hero .lead,
+  .hero .actions,
+  .avatar-card {
+    animation: none;
+  }
+}
   </style>
 </head>
 <body>
@@ -138,7 +178,7 @@
         <h3>Find me online</h3>
         <p>Replace each # with your own profile link. Remove any button you don't want to show.</p>
         <div class="socials">
-         <div class="socials">
+         
   <a href="https://www.instagram.com/hazim_wani56/" target="_blank" rel="noopener">Instagram</a>
   <a href="https://www.facebook.com/hazim.wani.775" target="_blank" rel="noopener">Facebook</a>
   <a href="https://github.com/haziqwani56" target="_blank" rel="noopener">GitHub</a>
