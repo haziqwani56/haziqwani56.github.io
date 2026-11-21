@@ -118,6 +118,27 @@
   .avatar-card {
     animation: none;
   }
+}/* Smooth button animations */
+.btn {
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              filter 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(139, 124, 255, 0.25);
+  filter: brightness(1.12);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
 }
   </style>
 </head>
