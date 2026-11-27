@@ -168,7 +168,11 @@
       </div>
     </section>
 
-    <section id="about">
+   <section class="card" id="live-clock" style="text-align:center; margin-bottom:30px;">
+  <div class="icon">🕒</div>
+  <h2 id="clock-time">00:00:00</h2>
+  <p id="clock-date">Loading date...</p>
+</section> <section id="about">
       <div class="section-head"><div class="eyebrow">A little introduction</div><h2>About Me</h2><p>A few words about who I am.</p></div>
       <div class="about">
         <div class="card"><div class="icon">👋</div><h3>Nice to meet you!</h3><p>I'm Haziq Mushtaq. Thanks for visiting my personal website.</p></div>
@@ -247,7 +251,23 @@
       menuBtn.setAttribute('aria-expanded', 'false');
     }));
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  function updateClock() {
+  const now = new Date();
+
+  document.getElementById('clock-time').textContent =
+    now.toLocaleTimeString('en-IN');
+
+  document.getElementById('clock-date').textContent =
+    now.toLocaleDateString('en-IN', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+}
+
+updateClock();
+setInterval(updateClock, 1000); </script>
 <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
 <style>
