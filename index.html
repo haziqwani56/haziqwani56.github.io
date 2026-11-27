@@ -157,7 +157,7 @@
     <section class="hero" id="home">
       <div>
         <div class="eyebrow">Welcome to my corner of the internet</div>
-        <h1>Hello, I'm <span>Haziq Mushtaq</span>.</h1>
+       <h1>Hello, I'm <span id="typing-name"></span><span class="typing-cursor">|</span></h1> 
         <p class="lead">Welcome to my personal website! I'm Haziq Mushtaq. I enjoy technology, cricket, photography, and editing. Explore my website to learn more about me and my interests!</p>
           <a class="btn primary" href="#about">Get to know me</a>
           <a class="btn secondary" href="#contact">Connect with me</a>
@@ -267,7 +267,25 @@
 }
 
 updateClock();
-setInterval(updateClock, 1000); </script>
+setInterval(updateClock, 1000);  const typingName = document.getElementById('typing-name');
+const nameText = 'Haziq Mushtaq';
+let letterIndex = 0;
+
+function typeName() {
+    typingName.textContent = nameText.slice(0, letterIndex);
+    letterIndex++;
+
+    if (letterIndex <= nameText.length) {
+        setTimeout(typeName, 150);
+    } else {
+        setTimeout(() => {
+            letterIndex = 0;
+            typeName();
+        }, 1500);
+    }
+}
+
+typeName(); </script>
 <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
 <style>
